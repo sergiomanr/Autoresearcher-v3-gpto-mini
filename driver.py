@@ -65,10 +65,10 @@ def main():
             "Act as an expert Data Scientist and Kaggle Grandmaster. "
             "Read program_1.md and deeply analyze data_dictionary.md. "
             "CRITICAL: Read 'failed_experiments.txt' to see what ideas have already been tried and rejected. DO NOT repeat them. "
-            "Read 'results.tsv' or 'exito.txt' to see what ideas were successful. "
+            "Read 'exito.txt' to see what ideas were successful. "
             "Implement ONE sophisticated new feature in preprocess.py to lower the RMSE. "
             "I WANT you to experiment with categorical columns! Use advanced techniques like "
-            "target encoding, frequency encoding, one-hot encoding, or grouped aggregations. "
+            "target encoding, frequency encoding, one-hot encoding, grouped aggregations individual levels found in data_dictionary.md "
             "CRITICAL RULES: "
             "1. You must handle missing values safely. "
             "2. Do not drop the target column ('Sale_Price'). "
@@ -76,16 +76,15 @@ def main():
             "Instead, always use assignment: `df[col] = df[col].fillna(val)`. "
             "If creating many new columns, avoid DataFrame fragmentation by assigning them via a dictionary and using `pd.concat`, "
             "or use `df = df.copy()` to de-fragment before returning. "
-            "4. FINAL STEP: Because the XGBoost model cannot accept strings, the very last line "
             "before returning your dataframe MUST drop all remaining object/category columns. "
             "Always end your function with: `return df.select_dtypes(include=['number', 'bool'])`."
         )
         
         # Run Aider via subprocess
-        print("[+] Waking up Aider (GPT-4o Mini)...")
+        print("[+] Waking up Aider (GPT-5.1 Codex Mini)...")
         aider_cmd = [
             "aider", 
-            "--model", "gpt-4o-mini",               # Updated to use the OpenAI API model
+            "--model", "gpt-5.1-codex-mini",               # Updated to use the OpenAI API model
             "--yes",                                # Auto-accept changes
             "--message", prompt,
             "--read", "failed_experiments.txt",
