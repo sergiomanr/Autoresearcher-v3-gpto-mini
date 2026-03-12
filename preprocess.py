@@ -138,6 +138,11 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         # Drop the temporary Combined_Area column
         df = df.drop(columns=['Combined_Area'])
     
+    # Create Total_Area and Log_Total_Area features as a simple transformation
+    if all(col in df.columns for col in ['Gr_Liv_Area', 'Total_Bsmt_SF']):
+        df['Total_Area'] = df['Gr_Liv_Area'].fillna(0) + df['Total_Bsmt_SF'].fillna(0)
+        df['Log_Total_Area'] = np.log1p(df['Total_Area'])
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
