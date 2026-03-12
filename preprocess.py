@@ -98,6 +98,35 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         freq = df['Heating'].value_counts(normalize=True)
         df['Heating_Efficiency_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * mapping.get(row['Heating'], 0) * freq.get(row['Heating'], 0) * (1.1 if row['Central_Air'] else 1.0), axis=1)
     
+    # Create Zoning_Garage Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['MS_Zoning', 'Garage_Type', 'Gr_Liv_Area']):
+        # Ensure there is a value for Garage_Type
+        df['Garage_Type'] = df['Garage_Type'].fillna('None')
+        # Compute combined area using Garage_Area if available
+        if 'Garage_Area' in df.columns:
+            combined_area = df['Gr_Liv_Area'] + df['Garage_Area'].fillna(0)
+        else:
+            combined_area = df['Gr_Liv_Area']
+        df['Combined_Area'] = combined_area
+        # Compute target encoding for combined area premium
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby(['MS_Zoning', 'Garage_Type']).apply(
+                lambda grp: grp['Sale_Price'].sum() / grp['Combined_Area'].sum() if grp['Combined_Area'].sum() != 0 else 0
+            )
+            _SAVED_MAPPINGS['Zoning_Garage'] = mapping.to_dict()
+        else:
+            mapping = _SAVED_MAPPINGS.get('Zoning_Garage', {})
+        # Compute frequency encoding for the (MS_Zoning, Garage_Type) combination
+        freq_group = df.groupby(['MS_Zoning', 'Garage_Type']).size() / len(df)
+        freq_map = freq_group.to_dict()
+        # Create the new premium feature
+        df['Zoning_Garage_Premium'] = df.apply(
+            lambda row: row['Combined_Area'] * mapping.get((row['MS_Zoning'], row['Garage_Type']), 0) * freq_map.get((row['MS_Zoning'], row['Garage_Type']), 0),
+            axis=1
+        )
+        # Drop the temporary Combined_Area column
+        df = df.drop(columns=['Combined_Area'])
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
