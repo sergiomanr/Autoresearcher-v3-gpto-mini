@@ -49,6 +49,17 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         df['MS_SubClass_Freq'] = df['MS_SubClass'].map(freq)
         df['MS_SubClass_Premium'] = df['MS_SubClass'].map(mapping) * df['MS_SubClass_Freq']
     
+    # Create Bldg_Type Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['Bldg_Type', 'Gr_Liv_Area']):
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby('Bldg_Type').apply(lambda grp: grp['Sale_Price'].sum() / grp['Gr_Liv_Area'].sum())
+            _SAVED_MAPPINGS['Bldg_Type_Premium'] = mapping
+        else:
+            mapping = _SAVED_MAPPINGS.get('Bldg_Type_Premium', {})
+        freq = df['Bldg_Type'].value_counts(normalize=True)
+        df['Bldg_Type_Freq'] = df['Bldg_Type'].map(freq)
+        df['Bldg_Type_Premium'] = df['Gr_Liv_Area'] * df['Bldg_Type'].map(mapping) * df['Bldg_Type_Freq']
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
