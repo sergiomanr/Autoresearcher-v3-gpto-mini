@@ -143,6 +143,10 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         df['Total_Area'] = df['Gr_Liv_Area'].fillna(0) + df['Total_Bsmt_SF'].fillna(0)
         df['Log_Total_Area'] = np.log1p(df['Total_Area'])
     
+    if 'Lot_Area' in df.columns:
+        df['Lot_Area'] = df['Lot_Area'].fillna(df['Lot_Area'].median())
+        df['Lot_Area_Bin'] = pd.qcut(df['Lot_Area'], q=4, labels=False, duplicates='drop')
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
