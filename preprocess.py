@@ -147,6 +147,11 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         df['Lot_Area'] = df['Lot_Area'].fillna(df['Lot_Area'].median())
         df['Lot_Area_Bin'] = pd.qcut(df['Lot_Area'], q=4, labels=False, duplicates='drop')
     
+    # Create binary indicator for presence of a fireplace and impute missing Fireplaces if needed
+    if 'Fireplaces' in df.columns:
+        df['Fireplaces'] = df['Fireplaces'].fillna(0)
+        df['Has_Fireplace'] = (df['Fireplaces'] > 0).astype(int)
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
