@@ -1,3 +1,5 @@
 .aider*
 ag_model_temp/
 __pycache__/
+exito.txt
+failed_experiments.txt
