@@ -6,6 +6,7 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     # Create a copy to avoid modifying the original DataFrame
     df = df.copy()
     global_sale_price_median = df['Sale_Price'].median()
+    global_sale_price_mean = df['Sale_Price'].mean()
     
     # Fill missing values for categorical columns with a placeholder
     categorical_cols = df.select_dtypes(include=['object']).columns
@@ -50,6 +51,31 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     if agg_feature_data:
         agg_features = pd.DataFrame(agg_feature_data, index=df.index)
         df = pd.concat([df, agg_features], axis=1)
+
+    smoothing = 15
+    smoothing_feature_data = {}
+    n_rows = len(df)
+
+    for col in categorical_cols:
+        col_values = df[col]
+        category_counts = col_values.value_counts()
+        count_map = col_values.map(category_counts).fillna(0)
+        category_mean = df.groupby(col)['Sale_Price'].mean()
+        smooth_map = (
+            (category_mean * category_counts) + (global_sale_price_mean * smoothing)
+        ) / (category_counts + smoothing)
+        smoothed_col = col_values.map(smooth_map).fillna(global_sale_price_mean)
+        freq_ratio = (count_map / n_rows).fillna(0)
+
+        smoothing_feature_data[f"{col}_te_smooth"] = smoothed_col
+        smoothing_feature_data[f"{col}_freq_ratio"] = freq_ratio
+        smoothing_feature_data[f"{col}_smooth_freq_interaction"] = (
+            smoothed_col * freq_ratio
+        )
+
+    if smoothing_feature_data:
+        smoothing_features = pd.DataFrame(smoothing_feature_data, index=df.index)
+        df = pd.concat([df, smoothing_features], axis=1)
 
     # Target encoding for categorical columns
     for col in categorical_cols:
