@@ -11,7 +11,18 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     # Create a copy to avoid modifying the original DataFrame
     df = df.copy()
     
-
+    # Derive Total_Bathrooms as a weighted sum of above-grade and basement bathrooms
+    bathroom_columns = ['Full_Bath', 'Half_Bath', 'Bsmt_Full_Bath', 'Bsmt_Half_Bath']
+    if all(col in df.columns for col in bathroom_columns):
+        filled = {col: df[col].fillna(0) for col in bathroom_columns}
+        df = df.assign(**filled)
+        df['Total_Bathrooms'] = (
+            df['Full_Bath']
+            + 0.5 * df['Half_Bath']
+            + df['Bsmt_Full_Bath']
+            + 0.5 * df['Bsmt_Half_Bath']
+        )
+    
     # Create Age-Adjusted Foundation Premium feature if relevant columns exist
     if all(col in df.columns for col in ['Foundation', 'Total_Bsmt_SF', 'Year_Built']):
         # Compute target encoding if training data has Sale_Price
