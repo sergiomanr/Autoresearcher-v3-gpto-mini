@@ -91,7 +91,7 @@ def main():
         print("[+] Waking up Aider (GPT-5.1 Codex Mini)...")
         aider_cmd = [
             "aider", 
-            "--model", "gpt-5.1-codex-mini",               # Updated to use the OpenAI API model
+            "--model", "o3-mini",               # Updated to use the OpenAI API model
             "--yes",                                # Auto-accept changes
             "--message", prompt,
             "--read", "failed_experiments.txt",
