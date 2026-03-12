@@ -88,6 +88,16 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         freq_combo = df.groupby(['MS_Zoning', 'House_Style']).size() / len(df)
         df['Zoning_HouseStyle_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * mapping.get((row['MS_Zoning'], row['House_Style']), 0) * freq_combo.get((row['MS_Zoning'], row['House_Style']), 0), axis=1)
     
+    # Create Heating Efficiency Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['Heating', 'Central_Air', 'Gr_Liv_Area']):
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby('Heating').apply(lambda grp: grp['Sale_Price'].sum() / grp['Gr_Liv_Area'].sum())
+            _SAVED_MAPPINGS['Heating_Efficiency'] = mapping.to_dict()
+        else:
+            mapping = _SAVED_MAPPINGS.get('Heating_Efficiency', {})
+        freq = df['Heating'].value_counts(normalize=True)
+        df['Heating_Efficiency_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * mapping.get(row['Heating'], 0) * freq.get(row['Heating'], 0) * (1.1 if row['Central_Air'] else 1.0), axis=1)
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
