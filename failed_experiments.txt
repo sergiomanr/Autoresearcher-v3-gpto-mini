@@ -1,0 +1,425 @@
+FAILED IDEA (Worse RMSE: 21264.124906):
+feat: Implement Age-Adjusted Foundation Premium and MS_Zoning Premium features
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 21184.984116):
+feat: Implement Garage Premium feature using target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 21146.871542):
+feat: Implement Building Style Interaction Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20636.790448):
+feat: add MS_Zoning_Lot_Premium feature using target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 21189.267472):
+feat: Implement Garage Efficiency Premium feature for improved RMSE
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20392.126324):
+feat: add MS_SubClass frequency and premium calculations to preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20645.82321):
+feat: add Heating-Central Premium feature with target encoding for RMSE reduction
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20066.444827):
+feat: Implement Exterior Combination Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19529.556677):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19548.976853):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19544.831747):
+feat: Implement House Style Room Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20051.605422):
+feat: add Zoning-SaleType Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19814.510239):
+feat: add MS_Zoning_Premium feature using target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19646.771134):
+feat: add Zoning-Bldg_Type Premium feature to preprocessing function
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19523.232519):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19485.14429):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19514.891955):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19978.313843):
+feat: add Sale_Type-Zoning Premium feature to preprocessing function
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20321.482623):
+feat: add Fireplace-HouseStyle Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19619.858511):
+feat: add Building-Subclass Interaction Premium feature with encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20058.078871):
+feat: implement Foundation-MS_Zoning Premium feature for preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19525.740959):
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19535.912367):
+feat: Implement Exterior1st_HouseStyle Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20067.144889):
+feat: add Total_Living_Area by summing Gr_Liv_Area and Total_Bsmt_SF
+
+Co-authored-by: aider (gpt-5.1-codex-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19772.616215):
+feat: Add Year_Built_Bin feature to bin home age into decade groups
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19736.028375):
+feat: add Bath_to_Room_Ratio feature for diversified feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20086.78929):
+feat: add Total_Area and Log_Total_Area as simple transformations
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19839.056429):
+feat: add Missing Ratio feature to enhance data quality assessment
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20106.996991):
+feat: add Total_Area and Log_Total_Area as simple transformations
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19974.010313):
+feat: add binned House Age Group feature based on Year_Built
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20099.552234):
+feat: add LivingArea per Bathroom ratio as a logical multi-variable interaction
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19813.064781):
+feat: add House Age feature as a simple transformation in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19570.425034):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19854.460859):
+feat: Impute missing Garage_Area using average per Garage_Cars
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19583.10047):
+feat: add Area_per_Bedroom feature for living area per bedroom ratio
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20160.949184):
+feat: add Property_Age feature based on Year_Sold and Year_Built
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19689.897511):
+feat: add Lot_to_TotalArea_Ratio feature for improved feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19582.689499):
+feat: add House_Age feature to diversify feature engineering in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20012.221866):
+feat: add basement area ratio feature to enhance feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19724.106672):
+feat: add Bathroom Density feature as a logical multi-variable interaction
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19677.454307):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19904.431667):
+feat: Implement creative missing value imputation for Garage_Area feature
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19656.851426):
+feat: implement creative missing value imputation for Garage_Area
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19881.85102):
+feat: add Rooms_per_Bedroom feature as a simple transformation
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19709.335859):
+feat: add Bath_to_Bed_Ratio as a logical multi-variable interaction feature
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19765.208221):
+feat: add Living Area Ratio feature to diversify feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19806.973317):
+feat: add log transformation of Lot_Area to enhance feature set
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19988.380625):
+feat: add Living Area per Bathroom feature for enhanced feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19815.446904):
+feat: add Living_to_Lot_Ratio feature for better area comparison
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19945.201729):
+feat: add binning for Gr_Liv_Area into four quantile groups
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19923.194121):
+feat: add Bathrooms_Ratio feature for better area utilization analysis
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19899.797788):
+feat: add Effective_Bsmt_Bathrooms feature weighted by finish quality
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19611.678969):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19608.267644):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19504.248563):
+feat: add Bath_to_Bed_Ratio as a logical multi-variable interaction feature
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19526.090034):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19940.276427):
+feat: add Non-Bedroom Rooms feature to enhance feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19865.48605):
+feat: add Building Age feature based on Year_Built column
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19520.399996):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19666.711774):
+feat: add House Age feature as a simple transformation in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19486.443288):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19708.596297):
+feat: add quartile binning feature for Gr_Liv_Area to diversify features
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19823.115396):
+feat: add log transformation for Lot_Area to diversify feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19987.488086):
+feat: add Living Area per Room feature as a logical multi-variable interaction
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19888.600956):
+feat: add square root transformation of Gr_Liv_Area to reduce skewness
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19796.793276):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19587.710433):
+feat: add missing value imputation for Garage_Area based on Garage_Type
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20162.038786):
+feat: add House Age feature based on Year Sold and Year Built
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19835.539015):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20009.627283):
+feat: add Basement_Ratio feature to preprocess DataFrame in apply_preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20121.848026):
+feat: add LivingArea per Bedroom feature as a simple transformation
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19689.852818):
+feat: add Large_Living_Area binary feature based on Gr_Liv_Area percentile
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 20065.006354):
+feat: add Basement Bathroom Ratio feature to diversify feature set
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19841.212866):
+feat: add binning feature for Gr_Liv_Area into quartile groups
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19512.450179):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19718.915995):
+feat: add log transformation for basement area feature in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19517.293255):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19707.146318):
+feat: add Living Area per Bedroom feature to diversify feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19707.765779):
+feat: add binning for Total_Bsmt_SF into quartiles as Bsmt_SF_Bin
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19889.690998):
+feat: add Living Area per Room feature for enhanced feature engineering
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19634.481506):
+feat: add binning transformation for Gr_Liv_Area into quartile bins
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19522.078578):
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19805.650103):
+feat: Implement creative missing value imputation for Mas_Vnr_Area
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19774.59461):
+feat: add binary indicator for presence of a basement in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================
+FAILED IDEA (Worse RMSE: 19580.581401):
+feat: add House_Age feature to diversify feature engineering in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+==============================

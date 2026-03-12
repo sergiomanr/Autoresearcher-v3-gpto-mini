@@ -1,0 +1,96 @@
+--- Iteration 1 ---
+RMSE Improved: 21671.605755 -> 21069.440999
+Change:
+feat: implement Age-Adjusted Foundation Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 5 ---
+RMSE Improved: 21069.440999 -> 20416.431030
+Change:
+feat: Implement Roof-Exterior Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 6 ---
+RMSE Improved: 20416.431030 -> 20296.090658
+Change:
+feat: add MS_SubClass frequency and premium calculations to preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 11 ---
+RMSE Improved: 20296.090658 -> 20062.034991
+Change:
+feat: add Bldg_Type Premium feature using target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 12 ---
+RMSE Improved: 20062.034991 -> 19761.365945
+Change:
+feat: Implement Exterior Combination Premium feature with target encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 14 ---
+RMSE Improved: 19761.365945 -> 19580.511127
+Change:
+feat: implement Zoning-HouseStyle Premium feature for RMSE reduction
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 15 ---
+RMSE Improved: 19580.511127 -> 19457.798437
+Change:
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 21 ---
+RMSE Improved: 19457.798437 -> 19437.901944
+Change:
+feat: add Heating Efficiency Premium feature with target and frequency encoding
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 1 ---
+RMSE Improved: 19788.974708 -> 19732.672602
+Change:
+feat: add Total_Area and Log_Total_Area as simple transformations
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 9 ---
+RMSE Improved: 19732.672602 -> 19563.719892
+Change:
+feat: add binning feature for Lot_Area using quartile groups
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 10 ---
+RMSE Improved: 19563.719892 -> 19503.456104
+Change:
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
+--- Iteration 23 ---
+RMSE Improved: 19503.456104 -> 19462.564682
+Change:
+feat: add binary indicator for presence of a fireplace in preprocessing
+
+Co-authored-by: aider (o3-mini) <aider@aider.chat>
+----------------------------------------
+
