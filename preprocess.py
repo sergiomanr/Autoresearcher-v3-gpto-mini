@@ -78,6 +78,16 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
                                                 mapping.get((row['Roof_Matl'], row['Exterior_1st'], row['Mas_Vnr_Type']), 0) * 
                                                 freq_combo.get((row['Roof_Matl'], row['Exterior_1st'], row['Mas_Vnr_Type']), 0), axis=1)
     
+    # Create Zoning-HouseStyle Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['MS_Zoning', 'House_Style', 'Gr_Liv_Area']):
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby(['MS_Zoning', 'House_Style']).apply(lambda grp: grp['Sale_Price'].sum() / grp['Gr_Liv_Area'].sum())
+            _SAVED_MAPPINGS['Zoning_HouseStyle_Premium'] = mapping.to_dict()
+        else:
+            mapping = _SAVED_MAPPINGS.get('Zoning_HouseStyle_Premium', {})
+        freq_combo = df.groupby(['MS_Zoning', 'House_Style']).size() / len(df)
+        df['Zoning_HouseStyle_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * mapping.get((row['MS_Zoning'], row['House_Style']), 0) * freq_combo.get((row['MS_Zoning'], row['House_Style']), 0), axis=1)
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
