@@ -1,8 +1,7 @@
 import pandas as pd
-import numpy as np
 
 def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
-    """Feature engineering with target encoding for categorical columns."""
+    """Feature engineering with target and frequency encodings for categorical columns."""
     
     # Create a copy to avoid modifying the original DataFrame
     df = df.copy()
@@ -11,6 +10,19 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     categorical_cols = df.select_dtypes(include=['object']).columns
     for col in categorical_cols:
         df[col] = df[col].fillna('Missing')
+
+    # Frequency-style encodings to capture how common each category is
+    freq_feature_data = {}
+    for col in categorical_cols:
+        freq_feature_data[f"{col}_freq"] = (
+            df[col]
+            .map(df[col].value_counts(normalize=True))
+            .fillna(0)
+        )
+
+    if freq_feature_data:
+        freq_features = pd.DataFrame(freq_feature_data, index=df.index)
+        df = pd.concat([df, freq_features], axis=1)
 
     # Target encoding for categorical columns
     for col in categorical_cols:
