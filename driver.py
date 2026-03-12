@@ -126,11 +126,14 @@ def main():
             
         else:
             print(f"[-] Score got worse or didn't improve (Current: {current_rmse} | Best: {best_rmse}).")
+            with open('failed_experiments.txt', 'a') as f:
+                f.write(f"FAILED IDEA (Worse RMSE: {current_rmse}):\n{change_description}\n{'='*30}\n")
+                print("Failed idea included into failed_experiment")
+            
             print(f"Logging failure and reverting to {safe_commit[:7]}...")
             
             # Log the failed idea so the AI doesn't try it again
-            with open('failed_experiments.txt', 'a') as f:
-                f.write(f"FAILED IDEA (Worse RMSE: {current_rmse}):\n{change_description}\n{'='*30}\n")
+            
                 
             subprocess.run(['git', 'reset', '--hard', safe_commit], capture_output=True)
             

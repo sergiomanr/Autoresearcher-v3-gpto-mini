@@ -12,7 +12,7 @@ from autogluon.tabular import TabularPredictor
 TARGET_COL = 'Sale_Price'      # UPDATE THIS if your target column name is different
 DATA_PATH = 'train.csv'        # UPDATE THIS if your filename is different
 AG_SAVE_PATH = 'ag_model_temp'
-TIME_LIMIT = 300               # 5 minutes search limit (300 seconds)
+TIME_LIMIT = 200               # 5 minutes search limit (300 seconds)
 
 def load_and_evaluate():
     start_time = time.time()
