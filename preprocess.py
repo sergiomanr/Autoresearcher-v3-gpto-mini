@@ -30,6 +30,15 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         # Create new feature: Age-Adjusted Foundation Premium
         df['Age_Adjusted_Foundation_Premium'] = df['Foundation_TE'] * df['Total_Bsmt_SF'] * df['Year_Decay']
 
+    # Create Roof-Exterior Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['Roof_Matl', 'Exterior_1st', 'Gr_Liv_Area']):
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby(['Roof_Matl', 'Exterior_1st']).apply(lambda x: (x['Sale_Price'] / x['Gr_Liv_Area']).mean())
+            _SAVED_MAPPINGS['Roof_Exterior'] = mapping.to_dict()
+        else:
+            mapping = _SAVED_MAPPINGS.get('Roof_Exterior', {})
+        df['Roof_Exterior_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * mapping.get((row['Roof_Matl'], row['Exterior_1st']), 0), axis=1)
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
