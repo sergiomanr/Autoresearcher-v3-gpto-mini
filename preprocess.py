@@ -60,6 +60,24 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
         df['Bldg_Type_Freq'] = df['Bldg_Type'].map(freq)
         df['Bldg_Type_Premium'] = df['Gr_Liv_Area'] * df['Bldg_Type'].map(mapping) * df['Bldg_Type_Freq']
     
+    # Create Exterior Combination Premium feature if relevant columns exist
+    if all(col in df.columns for col in ['Roof_Matl', 'Exterior_1st', 'Mas_Vnr_Type', 'Gr_Liv_Area']):
+        # Fill missing values for Mas_Vnr_Type to ensure consistency in grouping
+        df['Mas_Vnr_Type'] = df['Mas_Vnr_Type'].fillna('None')
+        # Compute frequency for each combination
+        combo = df[['Roof_Matl', 'Exterior_1st', 'Mas_Vnr_Type']]
+        freq_combo = combo.groupby(['Roof_Matl', 'Exterior_1st', 'Mas_Vnr_Type']).size() / len(df)
+        # Compute target encoding if Sale_Price is available
+        if 'Sale_Price' in df.columns:
+            mapping = df.groupby(['Roof_Matl', 'Exterior_1st', 'Mas_Vnr_Type']).apply(lambda x: (x['Sale_Price'] / x['Gr_Liv_Area']).mean())
+            _SAVED_MAPPINGS['Exterior_Combo'] = mapping.to_dict()
+        else:
+            mapping = _SAVED_MAPPINGS.get('Exterior_Combo', {})
+        # Create the new feature by combining Gr_Liv_Area, target encoded value, and frequency encoding
+        df['Exterior_Combo_Premium'] = df.apply(lambda row: row['Gr_Liv_Area'] * 
+                                                mapping.get((row['Roof_Matl'], row['Exterior_1st'], row['Mas_Vnr_Type']), 0) * 
+                                                freq_combo.get((row['Roof_Matl'], row['Exterior_1st'], row['Mas_Vnr_Type']), 0), axis=1)
+    
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
     
