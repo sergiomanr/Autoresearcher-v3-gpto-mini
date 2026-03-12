@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
-    """Feature engineering with frequency encoding for categorical columns."""
+    """Feature engineering with target encoding for categorical columns."""
     
     # Create a copy to avoid modifying the original DataFrame
     df = df.copy()
@@ -12,10 +12,10 @@ def apply_preprocessing(df: pd.DataFrame) -> pd.DataFrame:
     for col in categorical_cols:
         df[col] = df[col].fillna('Missing')
 
-    # Frequency encoding for categorical columns
+    # Target encoding for categorical columns
     for col in categorical_cols:
-        frequency_encoding = df[col].value_counts()
-        df[col] = df[col].map(frequency_encoding)
+        target_mean = df.groupby(col)['Sale_Price'].mean()
+        df[col] = df[col].map(target_mean)
 
     # Select only numeric and boolean columns
     df = df.select_dtypes(include=['number', 'bool'])
