@@ -76,7 +76,8 @@ def load_and_evaluate():
             train_data=train_data,
             presets='best_quality', # Triggers multi-layer stacking and bagging
             time_limit=TIME_LIMIT,  # 5 minute limit
-            num_gpus='auto'         # Safer than hardcoding 1, AutoGluon will find the RTX 3090 automatically
+            num_gpus='auto',        # Safer than hardcoding 1, AutoGluon will find the RTX 3090 automatically
+            ag_args_ensemble={'fold_fitting_strategy': 'sequential_local'}  # <--- THIS IS THE FIX
         )
     except Exception as e:
         print(f"Crash during AutoGluon training (likely bad features causing OOM/Inf):\n{e}")
