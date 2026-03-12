@@ -113,12 +113,5 @@ def load_and_evaluate():
     print(f"execution_time:   {execution_time:.1f}")
     print(f"num_features:     {num_features}")
 
-    # 7. LOG TO TSV
-    file_exists = os.path.isfile(LOG_FILE)
-    with open(LOG_FILE, 'a') as f:
-        if not file_exists:
-            f.write("timestamp\tcv_rmse\tcv_rmsle\tnum_features\n")
-        f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')}\t{cv_rmse:.6f}\t{cv_rmsle:.6f}\t{num_features}\n")
-
 if __name__ == "__main__":
     load_and_evaluate()
